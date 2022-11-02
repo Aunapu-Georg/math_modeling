@@ -1,11 +1,10 @@
 import numpy as np
 
 from task1 import earth_accel
-from task1 import pi
 
 h = 100
-alpha = pi / 3
-beta = pi / 6
+alpha = np.pi / 3
+beta = np.pi / 6
 
 a = earth_accel * h * ((np.tan(beta)) ** 2)
 b = 2 * ((np.cos(alpha)) ** 2) * (1 - np.tan(beta) * np.tan(alpha))
@@ -23,5 +22,6 @@ E = 300
 
 a = plank_const / sqrt((bolzman_const * T) ** 3)
 b = eiler_number ** (eiler_number * -1 / bolzman_const * T)
+N = (2 / sqrt(np.pi)) * a * b * sqrt(eiler_number ** T) 
 
-
+print(N)
