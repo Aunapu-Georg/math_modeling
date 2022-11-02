@@ -5,3 +5,5 @@ plank_const = 6.63 * 10 ** -34
 gas_const = 8.31
 earth_accel = 9.81
 pi = 3.14
+bolzman_const = 1.38 * 10 ** -23
+eiler_number = 2.72
