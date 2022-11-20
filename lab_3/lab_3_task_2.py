@@ -1,5 +1,4 @@
 import numpy as np
-
 from task1 import earth_accel
 
 h = 100
