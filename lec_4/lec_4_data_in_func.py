@@ -1,5 +1,4 @@
-def changer(a:int, b:list):
-  
+def changer(a:int, b:list):  
   a = 2
   b[0] = 'Good'
   

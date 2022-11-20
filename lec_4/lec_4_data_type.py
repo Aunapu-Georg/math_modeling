@@ -1,4 +1,4 @@
-# Complex
+ # Complex
 
 x = 3
 y = 4
@@ -15,14 +15,14 @@ print(z + w)
 s = 'Hello'
 print(s[0])
 
-# s[0] = 'H'
+# Нельзя: s[0] = 'H'
 
 # Tuple
 
 t = (1, 4, 9)
 print(t)
 print(t[0])
-# t[0] = 3
+# Нельзя: t[0] = 3 т.к. кортежи неизменяемые
 
 # List
 
