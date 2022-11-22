@@ -1,13 +1,14 @@
-number = int(input())
-number_dividers = []
-prime_numbers = [2, 3, 4, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 
-                 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
-current = 0
+from lab_2_prime_numbers_solver import prime_numbers_solver
 
-while number != 1:
-  while number % prime_numbers[current] == 0:
-    number = number // prime_numbers[current]
-    number_dividers.append(prime_numbers[current])
-  current += 1
-
-print(number_dividers)
+def number_dividers_solver(number:int = 0): # Находит простые делители числа, а не все возможные уникальные делители, так что не подходит для использования в 6 дополнительном задании, но все равно там использован
+  number_dividers = [1]
+  prime_numbers = prime_numbers_solver(1000)
+  current = 0
+  
+  while number != 1:
+    while number % prime_numbers[current] == 0:
+      number = number // prime_numbers[current]
+      number_dividers.append(prime_numbers[current])
+    current += 1
+  
+  return number_dividers
