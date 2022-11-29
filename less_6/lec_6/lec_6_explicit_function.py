@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def parabola_plotter(a=1, b=1, c=0, title='Parabola plotter'):
-    """ Рисователь парабол ьбщего вида
+    """ Рисователь парабол общего вида
         На входе нужно указать коэффициенты уравнения парабол
     """
 
