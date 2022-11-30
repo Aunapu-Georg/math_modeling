@@ -2,6 +2,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def polar_ellipse(eccentricity, focal_parameter):
+    """
+    Строит эллипс через полярные координаты
+    На вход принимает эксцентриситет и фокальный параметр
+    """
     alpha = np.arange(0, 8, 0.01)
     r = focal_parameter / (1 + eccentricity *  np.cos(alpha))
     plt.xlabel('Coord: x')
