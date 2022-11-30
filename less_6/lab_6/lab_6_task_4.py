@@ -50,5 +50,5 @@ polar_coord(coefficients, 'archimedean_spiral')
 coefficients = [1.12]
 polar_coord(coefficients, 'wand')
 """
-coefficients = [1.21]
+coefficients = [8]
 polar_coord(coefficients, 'rose')
