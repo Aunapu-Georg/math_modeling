@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import matplotlib.animation as animation
+import numpy as np
 
 fig, ax = plt.subplots()
-circle = plt.plot([], [], 'o', color='b', label='Circle')
+circle, = plt.plot([], [], 'o', color='b', label='Circle')
 
 def circle_move(k, time):
     R = k * time
@@ -12,10 +12,13 @@ def circle_move(k, time):
     y = R * np.sin(alpha)
     return x, y
 
+edge = 100
 plt.axis('equal')
+ax.set_xlim(-edge, edge)
+ax.set_ylim(-edge, edge)
 
 def animate(i):
-    circle.set_data(circle_move(k=1.5, time=i))
+    circle.set_data(circle_move(1.1, i))
     return circle
 
 ani = animation.FuncAnimation(fig,

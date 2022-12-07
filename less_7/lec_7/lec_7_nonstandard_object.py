@@ -19,7 +19,7 @@ ax.set_xlim(-edge, edge)
 ax.set_ylim(-edge, edge)
 
 def animate(i):
-    ball.set_data(circle_move(R=0.5, vx=0.01, vy=0.01, time=i))
+    ball.set_data(circle_move(0.5, 0.01, 0.01, i))
     return ball
 
 ani = animation.FuncAnimation(fig,
