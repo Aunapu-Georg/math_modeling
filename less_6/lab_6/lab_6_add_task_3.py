@@ -11,7 +11,9 @@ def deflection_function(a, b, x_start, x_stop, x_points):
     plt.title('Piecewise graph')
     plt.axis('equal')
 
-    x = np.linspace(x_start, a, x_points)
+    y = np.zeros(len())
+
+    x = np.linspace(x_start, a, 2)
     y = np.full(len(x), a ** 2)
     plt.plot(x, y)
 
@@ -19,7 +21,7 @@ def deflection_function(a, b, x_start, x_stop, x_points):
     y = x ** 2
     plt.plot(x, y)
 
-    x = np.linspace(b, x_stop, x_points)
+    x = np.linspace(b, x_stop, 2)
     y = np.full(len(x), b ** 2)
     plt.plot(x, y)
     

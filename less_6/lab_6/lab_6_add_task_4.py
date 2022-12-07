@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def stair_function(stairs_amount, stair_lenght, stair_height, x_start):
+def stair_function(stairs_amount, stair_lenght, stair_height, x_start, x_end):
     """
     Строит график функции "лесенки"
     На вход принимает количество "ступенек", начало графика, а также длину ступени
