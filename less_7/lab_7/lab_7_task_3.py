@@ -1,43 +1,61 @@
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+from matplotlib.animation import FuncAnimation
 import numpy as np
 
-def stunning_animations_maker(kind=None):
-    fig, ax = plt.subplots()
+figure = 'heart'
 
-    if kind is None:
-        print('Тип анимации не задан')
-    elif kind == 'butterfly':
-        euler_constant = 2.718281828
+fig, ax = plt.subplots()
 
-        butterfly, = plt.plot([], [], '~', color='g', label='Butterfly')
+if figure == 'butterfly':
+    butterfly, = plt.plot([], [], '-.', color='g', label='Butterfly')
+    euler_constant = 2.718281828
 
-        alpha = np.arange(0, 12 * np.pi, 0.1)
+    def butterfly_move(angle_vel, time): 
+        alpha = angle_vel * (np.pi / 180) * time
         x = np.sin(alpha) * (euler_constant ** (np.cos(alpha) - 2 * np.cos(4 * alpha) + np.sin(alpha / 12) ** 5))
-        y = np.cis(alpha) * (euler_constant ** np.cos(alpha) - 2 * np.cos(4 * alpha) + np.sin(alpha / 12) ** 5)
+        y = np.cos(alpha) * (euler_constant ** np.cos(alpha) - 2 * np.cos(4 * alpha) + np.sin(alpha / 12) ** 5)
+        return x, y
 
-        plt.axis('equal')
-        edge = 5
-        ax.set_xlim(-edge, edge)
-        ax.set_ylim(-edge, edge)
-    elif kind == 'heart':
-        heart, = plt.plot([], [], '*', color='y', label='heart')
+    edge = 30
+    plt.axis('equal')
+    ax.set_xlim(-edge, edge)
+    ax.set_ylim(-edge, edge)
 
-        alpha = np.arange(0, 2 * np.pi, 0.1)
+    def butterfly_animate(i):
+        butterfly.set_data(butterfly_move(angle_vel=1, time=i))
+        return butterfly
+
+    ani = FuncAnimation(fig,
+                    butterfly_animate,
+                    frames=180,
+                    interval=30
+                    )
+
+    ani.save('ani.gif')
+
+
+elif figure == 'heart':
+    heart, = plt.plot([], [], ':', color='y', label='Heart')
+
+    def heart_move(angle_vel, time):
+        alpha = angle_vel * (np.pi / 180) * time
         x = 16 * np.sin(alpha) ** 3
         y = 13 * np.cos(alpha) - 5 * np.cos(2 * alpha) - 2 * np.cos(3 * alpha) - np.cos(4 * alpha)
+        return x, y
 
-        plt.axis('equal')
-        edge = 20
-        ax.set_xlim(-edge, edge)
-        ax.set_ylim(-edge, edge)
-    else:
-        print('Невозможно создание анимации заданного типа')
-    
-    
+    edge = 30
+    plt.axis('equal')
+    ax.set_xlim(-edge, edge)
+    ax.set_ylim(-edge, edge)
 
-"""
-stunning_animations_maker('butterfly')
-"""
+    def heart_animate(i):
+        heart.set_data(heart_move(angle_vel=1, time=i))
+        return heart
 
-stunning_animations_maker('heart')
+    ani = FuncAnimation(fig,
+                    heart_animate,
+                    frames=180,
+                    interval=30
+                    )
+
+    ani.save('ani.gif')
