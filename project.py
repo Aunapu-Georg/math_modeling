@@ -21,12 +21,15 @@ amount = 100
 photons = []
 colours = ['tomato', 'darkorange', 'forestgreen', 'paleturquoise', 'royalblue', 'rebeccapurple']
 velocities = []
+start_coordinates = []
 for current_photon in range(amount):   
-        colour_index = randint(0, len(colours) - 1)
-        photon, = plt.plot([], [], 'o', color=colours[colour_index], markersize=5)
-        photons.append(photon)
-        velocity = [randint(-10, 10), randint(-10, 10)]
-        velocities.append(velocity)
+    colour_index = randint(0, len(colours) - 1)
+    photon, = plt.plot([], [], 'o', color=colours[colour_index], markersize=5)
+    photons.append(photon)
+    velocity = [randint(-10, 10), randint(-10, 10)]
+    velocities.append(velocity)
+    start_coordinate = [randint(atom_coordinates[0] - 1, atom_coordinates[0] + 1), randint(atom_coordinates[1] - 1, atom_coordinates[1] + 1)]
+    start_coordinates.append(start_coordinate)
 
 def photon_move(time, vx, vy, x0, y0):
     ''' 
