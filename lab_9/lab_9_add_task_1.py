@@ -2,14 +2,14 @@ import numpy as np
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 
-h = 12345678
-R = 6378100
+h = 123456789
+R = 6371000
 M = 5.9742 * 10 ** 24
 r_0 = R + h
 v_0 = 0.1
 G = 6.674 * 10**(-11)
 
-r = np.arange(r_0, 0, -100)
+r = np.linspace(r_0, 0, 100)
 
 def meteorite_function(v, r):
     dvdr = G * M / (v * (h + R - r) ** 2)
