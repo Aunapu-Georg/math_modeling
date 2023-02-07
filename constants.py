@@ -9,7 +9,7 @@ boltzmann_constant = 1.380649 * 10**(-23) # Дж / К
 # Постоянные, связывающие разные системы единиц
 
 atomic_mass_unit = 1.660539066 * 10**(-27) # кг
-avogadro_constant = 6.02214076 * 10**(23)
+avogadro_constant = 6.02214076 * 10**23
 universal_gas_constant = boltzmann_constant * avogadro_constant # Дж / К * моль
 standard_atmospheric_pressure = 101325 # Па
 
