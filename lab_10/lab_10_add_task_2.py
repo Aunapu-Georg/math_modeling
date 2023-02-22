@@ -8,7 +8,7 @@ def diff_func(default, x):
     y, w = default
 
     dy_dx = w
-    dw_dx = w ** 2 / y - 3 * y / x ** 0.5
+    dw_dx = w ** 2 / y - 3 * y / x ** 0.5 # Неправильно выведено
     return dy_dx, dw_dx
 
 y0 = 0.01
@@ -23,3 +23,5 @@ plt.plot(sol[:, 1], x, 'y', label='w(x)')
 
 plt.legend()
 plt.savefig('pic.png')
+
+# Возникает ошибка

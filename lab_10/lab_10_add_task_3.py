@@ -16,7 +16,7 @@ w0 = 0
 
 default = y0, w0
 
-sol = odeint(diff_func, default, x)
+sol = odeint(diff_func, default, t)
 
 plt.plot(sol[:, 0], t, 'r', label='y(t)')
 plt.plot(sol[:, 1], t, 'b', label='w(t)')
@@ -24,3 +24,4 @@ plt.plot(sol[:, 1], t, 'b', label='w(t)')
 plt.legend()
 plt.savefig('pic.png')
 
+# Возникает ошибка
